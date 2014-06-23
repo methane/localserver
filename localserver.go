@@ -9,11 +9,15 @@ import (
 )
 
 func main() {
-	var listen string
+	var listen, dir string
+	flag.StringVar(&dir, "dir", "", "Directory path for serving.")
 	flag.StringVar(&listen, "listen", ":8080", "host:port (default ':8080'")
 	flag.Parse()
 
-	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if dir == "" {
+		dir = filepath.Dir(os.Args[0])
+	}
+	dir, err := filepath.Abs(dir)
 	if err != nil {
 		log.Fatal(err)
 	}
