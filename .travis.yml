@@ -1,7 +1,7 @@
 language: go
 install:
-    go get github.com/mitchellh/gox
-    gox -build-toolchain -osarch=windows/386
+    - go get github.com/mitchellh/gox
+    - gox -build-toolchain -osarch=windows/386
 script: make
 deploy:
   provider: releases
