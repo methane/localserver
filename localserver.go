@@ -17,5 +17,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir(dir))))
+	log.Fatal(http.ListenAndServe(listen, http.FileServer(http.Dir(dir))))
 }
