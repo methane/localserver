@@ -1,0 +1,9 @@
+language: go
+script: make
+deploy:
+  provider: releases
+  api_key:
+    secure: cL0ByoBtiYrBKa9vkka5+PLJpnq3yfTPLLIlwbm25zInSwCgtlqIyUwYflyUCZOSVnM3vcReiegPaPMy0j88HIxIULt5dECDwuS0/WDGNZ008Tf8Uc6aYZai8DSaOSdlj1QB/DANJQ2xM2vXFp85hq9FMXH5VJUwuLSNWBwkBK0=
+  file: localserver-win32.zip
+  on:
+    repo: methane/localserver
